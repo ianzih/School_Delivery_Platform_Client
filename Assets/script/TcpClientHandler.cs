@@ -10,7 +10,7 @@ using System;
 public class TcpClientHandler : MonoBehaviour
 {
     Socket socketSend;
-    public int _port;
+    public int _port = 5701;
     public  void InitSocket()
     {
         try

@@ -93,7 +93,8 @@ public class Login : MonoBehaviour
                     msg_recv.text = JsonRecv.msg.ToString();
                     tcpClient.InitSocket();
                 }
-            }       
+            }
+            tcpClient.SocketStop();
         }
     }
     void Start()

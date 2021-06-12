@@ -70,8 +70,9 @@ public class Check_order : MonoBehaviour
     void Start()
     {
         connect = this;
+
         ucpClient = gameObject.AddComponent<UdpClientHandler>();
-        ucpClient._port = 5701;
+        ucpClient._port = 5702;
         ucpClient.InitSocket();
 
         Json_send_order send_order_count = new Json_send_order
@@ -93,7 +94,7 @@ public class Check_order : MonoBehaviour
         int recv_len = int.Parse(recv_str.Substring(0, 4).ToString()); //字串長度
         string recv_json = recv_str.Substring(4, recv_str.Length - 4).ToString();
         //len 不同就重送
-        if (recv_len != recv_json.Length - 1)
+        if (recv_len != recv_json.Length)
         {
             msg.text = "請返回介面，重新進入訂單查詢";
         }
@@ -120,12 +121,13 @@ public class Check_order : MonoBehaviour
                 }
             }
         }
+        ucpClient.SocketStop();
     }
     public void send_order_num()
     {
+        tcpClient = gameObject.AddComponent<TcpClientHandler>();
         tcpClient._port = 5701;
         tcpClient.InitSocket();
-
         Json_send_one_order send_one_order = new Json_send_one_order
         {
             action = "ticket_status",

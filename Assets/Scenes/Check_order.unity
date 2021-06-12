@@ -1670,6 +1670,7 @@ MonoBehaviour:
   return_interface: {fileID: 1351884727}
   send_check: {fileID: 920009271}
   count_dropdown: {fileID: 1289303195}
+  DropOptions1: []
 --- !u!224 &1265951436
 RectTransform:
   m_ObjectHideFlags: 0
