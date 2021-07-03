@@ -2,7 +2,7 @@
 
 * server : https://github.com/linwebs/school-delivery-platform
 
-* HackMD : https://hackmd.io/@linwebs-ncyu/HkL4I62Yu
+* 操作介紹 (HackMD) : https://hackmd.io/cdwgedFdTFmWf_a9F7ZfzA?view
 
 ## 開發環境與語言 
 
